@@ -1,0 +1,8 @@
+syntax: regexp
+^build$
+^dist$
+^master/src/redsmaster\.egg-info$
+^.pydevproject$
+^.project$
+^.settings$
+\.pyc$

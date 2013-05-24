@@ -1,0 +1,47 @@
+# Rename this file to redsmaster.conf and place it in $HOME/.redsmaster/ 
+# Restart redsmaster for the changes to take place.
+# Simply uncomment the options you need.
+
+[paths]
+# Path to the file containing the credentials for login to the storage 
+# provider. See the README file for informations on the format of the authfile. 
+
+# authfile = /path/to/authfile
+
+# Default mountpoint to use for mounting the remote storage.
+
+# mountpoint = /path/to/mountdir/ 
+
+# Path to the s3ql executables.
+
+# s3ql-path = /path/to/s3ql/ 
+
+# Path of the hg executable.
+
+# hg-path = /path/to/hg/ 
+
+[sshserver]
+# Keep in mind that ports under 1024 are privileged and can only 
+# be bound to a socket by root. If you want redsmaster to listen on such a port,
+# you could use authbind or something similar.
+port = 2222
+
+# If a password is set for a user, allow the user to login throug SSH using 
+# his password. Normally all users have to authenticate with their 
+# public keys. 
+
+# allow-pw-auth = True
+
+# This key is used as the server hostkey. If no key is present, 
+# redsmaster will create a new one.
+
+# host-key = ~/.redsmaster/host_key_rsa
+
+# If a host key has to be generated use this length. 
+# Generated host keys are RSA keys.
+
+# host-key-length = 1024
+
+[log]
+# The file where the server should log it's actions.
+serverlog = ~/.redsmaster/server.log

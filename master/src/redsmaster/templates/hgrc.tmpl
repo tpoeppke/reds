@@ -1,0 +1,5 @@
+[commitsigs]
+scheme = gnupg
+
+[hooks]
+pretxnchangegroup.verifyheads = python:commitsigs.verifyheadshook

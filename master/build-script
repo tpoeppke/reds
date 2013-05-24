@@ -1,0 +1,8 @@
+#! /bin/bash
+source /usr/local/bin/virtualenvwrapper.sh
+python setup.py sdist
+#rmvirtualenv reds
+#mkvirtualenv reds
+workon reds
+pip uninstall redsmaster
+pip install dist/redsmaster-1.0.2.tar.gz
