@@ -45,7 +45,7 @@ Then simply install redsmaster using pip:
 Or if you can't install it throug the Package Index, 
 download the packed file and install it with:
 
-	    pip install path/to/redsmaster-x.y.z.zip
+	pip install path/to/redsmaster-x.y.z.zip
      
 It is recommended to use a virtualenv for this.
 
