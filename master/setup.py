@@ -12,10 +12,10 @@ import redsmaster
 
 setuptools.setup(name='redsmaster',
                  version=redsmaster.VERSION,
-                 description='Revision controlled document storage for cloud services',
+                 description='Revision controlled and encrypted document storage for cloud services.',
                  author='Tobias Pöppke',
-                 author_email='t.poeppke@gmx.de',
-                 url='--',
+                 author_email='tobias.poeppke@gmail.com',
+                 url='https://bitbucket.org/tpoeppke/reds',
                  packages=setuptools.find_packages('src'),
                  package_dir={'': 'src'},
                  provides=['redsmaster'],
