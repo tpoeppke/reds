@@ -74,6 +74,17 @@ This will prompt for the new password for admin.
 Now, you can start playing with redsmaster and when you're finished just type:
     
     redsmaster stop
+	
+	
+	
+#################################################
+# Changelog
+#################################################
+Version 1.0.3:
+	-Only a few small changes to prepare the next update
+	
+Version 1.0.2:
+	-Initial release
 
 
 #################################################
