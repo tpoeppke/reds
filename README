@@ -6,19 +6,22 @@ Reds stands for Revision controlled document storage.
 With reds you can store your documents encrypted in the cloud 
 and still have full control over them, 
 because the encryption key is not stored at the cloud service provider.
-The encryption key is always in your hands, so be careful not to lose it.
+Therefore even the cloud service provider can't access your data.
+The encryption key is not stored anywhere else, so be careful not to lose it.
 
 But that's not all. The integrity and authenticity of the stored documents is
 ensured by means of digital signatures which are enforced by redsmaster for 
-every head commit.
+every head commit. Because of this, it is also possible to trace every change that 
+was made back to it's author with non-repudiation of origin.
 
-But there is also a built-in SSH server with user management and access control.
-So you can share the documents with those you want by giving them the address 
+Moreover, there is also a built-in SSH server with user management and access control.
+So you can share the documents with those you want to by giving them the address 
 of the server running redsmaster.
 
-They can just use a standard mercurial client to connect to the server at 
-standard port 2222. For example:
-    hg clone ssh://averagejoe@yourserver/your-repo
+They can just use a standard mercurial client to connect to the server at the 
+specified port (standard: 2222). For example:
+    
+	hg clone ssh://averagejoe@yourserver:2222/your-repo
     
 Redsmaster also supports public key login with SSH.
 
@@ -39,7 +42,7 @@ Then simply install redsmaster using pip:
         
     pip install path/to/redsmaster-x.y.z.tar.gz
      
-I recommend to use a virtualenv for this.
+It is recommended to use a virtualenv for this.
 
 The user running redsmaster must be in the fuse group.
 
@@ -77,4 +80,16 @@ Now, you can start playing with redsmaster and when you're finished just type:
 # License
 #################################################
 
-This software is distributed under the Apache License.
+Copyright 2014 Tobias Pöppke
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. 
