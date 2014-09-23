@@ -1,0 +1,23 @@
+syntax: regexp
+^master/build$
+^master/dist$
+^master/src/redsmaster\.egg-info$
+^.pydevproject$
+^.project$
+^.settings$
+\.pyc$
+
+syntax: regexp
+^master/build$
+syntax: regexp
+^master/dist$
+syntax: regexp
+^master/src/redsmaster\.egg-info$
+syntax: regexp
+^master/MANIFEST$
+syntax: glob
+.hgignore~
+.pydevproject~
+master/README
+master/build-script
+master/build-script~
