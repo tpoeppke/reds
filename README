@@ -1,4 +1,4 @@
-#################################################
+﻿#################################################
 # Introduction
 #################################################
 
@@ -40,7 +40,12 @@ To run redsmaster you need to have installed:
 
 Then simply install redsmaster using pip:
         
-    pip install path/to/redsmaster-x.y.z.tar.gz
+    pip install redsmaster
+
+Or if you can't install it throug the Package Index, 
+download the packed file and install it with:
+
+	    pip install path/to/redsmaster-x.y.z.zip
      
 It is recommended to use a virtualenv for this.
 
