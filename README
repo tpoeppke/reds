@@ -47,7 +47,10 @@ download the packed file and install it with:
 
 	pip install path/to/redsmaster-x.y.z.zip
      
-It is recommended to use a virtualenv for this.
+This packed file is available on the downloads page as well as the 
+GnuPG signature file for it (redsmaster-x.y.z.zip.asc).
+
+It is recommended to use a virtualenv for this. 
 
 The user running redsmaster must be in the fuse group.
 
