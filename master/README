@@ -1,8 +1,8 @@
-#################################################
+﻿#################################################
 # Introduction
 #################################################
 
-Reds stands for Revision controlled document storage.
+ReDS stands for Revision controlled document storage.
 With reds you can store your documents encrypted in the cloud 
 and still have full control over them, 
 because the encryption key is not stored at the cloud service provider.
@@ -40,9 +40,17 @@ To run redsmaster you need to have installed:
 
 Then simply install redsmaster using pip:
         
-    pip install path/to/redsmaster-x.y.z.tar.gz
+    pip install redsmaster
+
+Or if you can't install it throug the Package Index, 
+download the packed file and install it with:
+
+	pip install path/to/redsmaster-x.y.z.zip
      
-It is recommended to use a virtualenv for this.
+This packed file is available on the downloads page as well as the 
+GnuPG signature file for it (redsmaster-x.y.z.zip.asc).
+
+It is recommended to use a virtualenv for this. 
 
 The user running redsmaster must be in the fuse group.
 
@@ -85,22 +93,3 @@ Version 1.0.3:
 	
 Version 1.0.2:
 	-Initial release
-
-
-#################################################
-# License
-#################################################
-
-Copyright 2014 Tobias Pöppke
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License. 
