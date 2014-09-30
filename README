@@ -2,7 +2,7 @@
 # Introduction
 #################################################
 
-Reds stands for Revision controlled document storage.
+ReDS stands for Revision controlled document storage.
 With reds you can store your documents encrypted in the cloud 
 and still have full control over them, 
 because the encryption key is not stored at the cloud service provider.
