@@ -28,7 +28,8 @@ setuptools.setup(name='redsmaster',
                                    "python-hglib",
                                    "paramiko",
                                    "sqlalchemy",
-                                   "passlib"],
+                                   "passlib",
+								   "ecdsa"],
                  entry_points={ 'console_scripts':
                                     ['redsmaster = redsmaster.app:main']},
 
