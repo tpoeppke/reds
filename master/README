@@ -88,8 +88,11 @@ Now, you can start playing with redsmaster and when you're finished just type:
 #################################################
 # Changelog
 #################################################
+Version 1.0.4:
+	- Fixed incompatibilities with Cement 2.4
+
 Version 1.0.3:
-	-Only a few small changes to prepare the next update
+	- Only a few small changes to prepare the next update
 	
 Version 1.0.2:
-	-Initial release
+	- Initial release
