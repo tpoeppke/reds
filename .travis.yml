@@ -2,15 +2,12 @@ language: python
 python:
   - "2.6"
   - "2.7"
-  
 # command to install dependencies, no dependencies required at the moment
- before_install: 
+before_install: 
   - sudo apt-get update -qq
   - sudo apt-get install -y python-dev
   - sudo apt-get install -y s3ql
-  
- install:
+install:
   - pip install ./master
-  
 # command to run tests
 script: nosetests
