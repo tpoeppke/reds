@@ -21,7 +21,7 @@ limitations under the License.
 """
 
 from paramiko.util import logging
-from cement.core import backend
+from cement.utils.misc import minimal_logger
 
 SERVERLOG = logging.getLogger("SERVERLOG")
 SERVERLOG.setLevel(logging.DEBUG)
@@ -32,8 +32,8 @@ formatter = logging.Formatter(
 def get_logger(name):
     """Returns the logger from Cement with proper console format."""
     console_formatter = logging.Formatter("%(message)s")
-    logger = backend.minimal_logger(name)
+    logger = minimal_logger(name)
     # The first handler is the console handler and we want clean output 
     # to the console.
-    logger.handlers[0].setFormatter(console_formatter)
+    logger.backend.handlers[0].setFormatter(console_formatter)
     return logger

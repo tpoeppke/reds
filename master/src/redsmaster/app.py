@@ -55,7 +55,7 @@ class MasterBaseController(controller.CementBaseController):
                 util.get_url_examples()
         usage = ("redsmaster <cmd> [-h, --help] [--debug] [--quiet] "
                  "[--configfile <path>] [--authfile <path>]")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS
         
     @controller.expose(hide=True, help="Default is to print the help message.")
@@ -68,8 +68,11 @@ class FSCKController(controller.CementBaseController):
     class Meta:
         label = "fsck"
         description = "Check the remote filesystem."
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [STORAGEURL_ARG, FORCE_ARG]
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -87,7 +90,7 @@ class AddUserController(controller.CementBaseController):
         description = ("Add a user to the database. If the user already exists "
                        "add the user to the given roles and/or change the key "
                        "or password.")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["user"], dict(help="The username to add")),
                                 (["roles"], dict(help="The role(s) to which"
@@ -106,6 +109,9 @@ class AddUserController(controller.CementBaseController):
                                 ]
         usage = ("redsmaster adduser <user> <role(s)> [--publickey <path>] " 
                 "[--password <pass>]")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -160,11 +166,14 @@ class DelUserController(controller.CementBaseController):
     class Meta:
         label = "deluser"
         description = ("Delete the given user from the database.")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["user"], dict(help="The username to delete"))
                                 ]
         usage = ("redsmaster deluser <user>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -193,7 +202,7 @@ class AddRoleController(controller.CementBaseController):
         label = "addrole"
         description = ("Add a role to the database. If the role already exists "
                        "add the given users to the role.")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["role"], dict(help="The role to add.")),
                                 (["users"], dict(help="The user(s) to add "
@@ -201,6 +210,9 @@ class AddRoleController(controller.CementBaseController):
                                                  nargs="*"))
                                 ]
         usage = ("redsmaster addrole <role> <users>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -234,11 +246,14 @@ class DelRoleController(controller.CementBaseController):
     class Meta:
         label = "delrole"
         description = ("Delete the given role from the database.")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["role"], dict(help="The role to delete"))
                                 ]
         usage = ("redsmaster delrole <role>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -266,7 +281,7 @@ class AssignUserController(controller.CementBaseController):
     class Meta:
         label = "assignuser"
         description = ("Assign the given user to the given role(s).")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["user"], dict(help="The user to assign")),
                                 (["roles"], dict(help="The role(s) to assign "
@@ -274,6 +289,9 @@ class AssignUserController(controller.CementBaseController):
                                                  nargs="+"))
                                 ]
         usage = ("redsmaster assignuser <user> <roles>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -305,7 +323,7 @@ class DeassignUserController(controller.CementBaseController):
     class Meta:
         label = "deassignuser"
         description = ("Deassign the given user from the given role(s).")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["user"], dict(help="The user to deassign")),
                                 (["roles"], dict(help="The role(s) to deassign "
@@ -313,6 +331,9 @@ class DeassignUserController(controller.CementBaseController):
                                                  nargs="+"))
                                 ]
         usage = ("redsmaster deassignuser <user> <roles>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -344,7 +365,7 @@ class GrantPermissionController(controller.CementBaseController):
     class Meta:
         label = "grantpermission"
         description = ("Grant the given permission to the user.")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["role"], dict(help="The role to grant the "
                                                 "permission to")),
@@ -358,6 +379,9 @@ class GrantPermissionController(controller.CementBaseController):
                                                       default=""))
                                 ]
         usage = ("redsmaster grantpermission <role> <operation> <repository>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -388,7 +412,7 @@ class RevokePermissionController(controller.CementBaseController):
     class Meta:
         label = "revokepermission"
         description = ("Revoke the given permission to the role.")
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [
                                 (["role"], dict(help="The role to revoke the "
                                                 "permission from")),
@@ -402,6 +426,9 @@ class RevokePermissionController(controller.CementBaseController):
                                                       default=""))
                                 ]
         usage = ("redsmaster revokepermission <user> <operation> <object>")
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True)
     def default(self):
@@ -433,9 +460,12 @@ class StartController(controller.CementBaseController):
     class Meta:
         label = "start"
         description = "Start serving"
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [STORAGEURL_ARG, MOUNTPOINT_ARG, 
                                     FOREGROUND_ARG]
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True, help="Start serving")
     def default(self):
@@ -454,8 +484,11 @@ class StopController(controller.CementBaseController):
     class Meta:
         label = "stop"
         description = "Stop serving"
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
         
     @controller.expose(hide=True, help="Stop serving")
     def default(self):
@@ -472,8 +505,11 @@ class SetupController(controller.CementBaseController):
     class Meta:
         label = "setup"
         description = "Setup the program for use."
-        config_section = "general"
+        config_section = "redsmaster"
         arguments = DEFAULT_ARGS + [STORAGEURL_ARG, MOUNTPOINT_ARG, FORCE_ARG]
+        
+        stacked_type = 'nested'
+        stacked_on = 'base'
     
     def _setup_directories(self):
         configmgr = self.app.configmanager
@@ -485,7 +521,7 @@ class SetupController(controller.CementBaseController):
         util.create_dirs(configdir)
         config_tmpl = pkg_resources.resource_filename("redsmaster", 
                                             "templates/redsmaster.conf.tmpl")
-            
+        
         shutil.copyfile(config_tmpl, os.path.join(configdir, 
                                                   "redsmaster.conf.example"))
         util.create_dirs(config.CACHE_DIR)
@@ -528,7 +564,7 @@ class MasterApp(foundation.CementApp):
         label = "redsmaster"
         base_controller = MasterBaseController
         arguments_override_config = True
-        config_section = "general"
+        config_section = "redsmaster"
         config_files = [config.options['configfile'].default,]
 
         authfilestore_handler = ext_authfilestore.AuthfileStoreHandler        

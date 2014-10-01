@@ -489,6 +489,6 @@ config.register_option(name="host-key-length", sanitizer=int,
             "Generated host keys are RSA keys by default.")
     
 
-def load():
+def load(app):
     handler.register(SSHServerManager)
     

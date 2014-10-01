@@ -231,5 +231,5 @@ config.register_option(name="s3ql-path", section="paths", default="",
 config.register_option(name="force", section="general", action="store_true", 
                        help=("Force the operation to run."))
 
-def load():
+def load(app):
     handler.register(S3QLHandler)

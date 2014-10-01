@@ -128,5 +128,5 @@ class AuthfileStoreHandler(authfilestore.AuthfileStoreBaseHandler):
         return credentials
     
 
-def load():
+def load(app):
     handler.register(AuthfileStoreHandler)

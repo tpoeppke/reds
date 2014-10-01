@@ -204,5 +204,5 @@ config.register_option(name="hg-path", section="paths", default="",
                        help="""Path to hg.""")
         
         
-def load():
+def load(app):
     handler.register(HgHandler)
